@@ -1,19 +1,22 @@
 local player = game.Players.LocalPlayer -- Make the GUI local
 
-ScreenGui = Instance.new("ScreenGui")
+local ScreenGui = Instance.new("ScreenGui")
 local Button = Instance.new("TextButton")
 
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
 
 Button.Parent = ScreenGui
 Button.Size = UDim2.new(0, 120, 0, 50) -- Button size
-Button.Position = UDim2.new({0.844, 0},{0.274, 0}) -- Position on screen (right top area)
+Button.Position = UDim2.new(0.844, 0, 0.274, 0) -- Position on screen
 Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
 Button.Text = "Leave Game"
 Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 Button.Font = Enum.Font.SourceSansBold
 Button.TextSize = 20
+Button.Active = true
+Button.Draggable = true
 
 -- Button function
 Button.MouseButton1Click:Connect(function()
